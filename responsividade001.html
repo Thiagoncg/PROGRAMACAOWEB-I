@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubos Responsivos</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container dos cubos */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Cubos */
+        .cube {
+            flex: 1 1 30%; /* Garante que os cubos ocupem 30% da largura da tela */
+            height: 150px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 20px; /* Espaço entre as linhas dos cubos */
+        }
+
+        /* Responsividade: telas pequenas */
+        @media (max-width: 600px) {
+            .cube {
+                flex: 1 1 100%; /* Faz com que os cubos ocupem 100% da largura */
+                height: 100px; /* Ajusta o tamanho dos cubos */
+                font-size: 14px;
+                background-color: #e74c3c;
+            }
+        }
+
+        /* Responsividade: telas médias */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .cube {
+                flex: 1 1 45%; /* Ajusta os cubos para 45% da largura */
+                height: 120px;
+                font-size: 16px;
+                background-color: #f39c12;
+            }
+        }
+
+        /* Responsividade: telas grandes */
+        @media (min-width: 901px) {
+            .cube {
+                flex: 1 1 30%; /* Garante que os cubos ocupem 30% da largura da tela */
+                height: 150px;
+                font-size: 20px;
+                background-color: #3498db;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="cube">Cubos 1</div>
+        <div class="cube">Cubos 2</div>
+        <div class="cube">Cubos 3</div>
+    </div>
+
+</body>
+</html>

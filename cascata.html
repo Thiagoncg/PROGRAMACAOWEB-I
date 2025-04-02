@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de CSS - Cascateamento e Atributos</title>
+    <style>
+        /* 1.1. Ordem de Prioridade */
+        p {
+            color: blue;
+        }
+        #meu-paragrafo {
+            color: red;
+        }
+        .highlight {
+            color: green !important;
+        }
+
+        /* 2.1. Atributos Globais e Específicos */
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            background-color: lightgray;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* 2.2. Seletor de Atributo */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+        input[type="password"] {
+            border: 2px solid red;
+            padding: 5px;
+        }
+
+        /* 2.3. Seletor de Atributo com Valores Específicos */
+        a[href^="http"] {
+            color: orange;
+            font-weight: bold;
+        }
+        input[disabled] {
+            background-color: #ddd;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplos de CSS - Cascateamento e Atributos</h1>
+    
+    <h2>1.1. Ordem de Prioridade</h2>
+    <p id="meu-paragrafo" class="highlight">Este é um parágrafo.</p>
+    <!-- O texto será verde porque a classe .highlight possui !important, que tem prioridade sobre o ID #meu-paragrafo e a regra geral de <p> -->
+    
+    <h2>2.1. Atributos Globais e Específicos</h2>
+    <table>
+        <tr>
+            <td>Item 1</td>
+            <td>Item 2</td>
+        </tr>
+    </table>
+    
+    <h2>2.2. Seletor de Atributo</h2>
+    <input type="text" placeholder="Digite aqui">
+    <input type="password" placeholder="Senha">
+    
+    <h2>2.3. Seletor de Atributo com Valores Específicos</h2>
+    <a href="http://google.com">Google</a>
+    <a href="/pagina-interna">Interna</a>
+    <br>
+    <input type="text" disabled placeholder="Desativado">
+</body>
+</html>

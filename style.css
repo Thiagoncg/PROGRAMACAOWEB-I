@@ -1,60 +1,56 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
-body{
-    /* background-image: url(./assets/bg-mobile.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover; */
 
-    /* forma de atalho */
-    background: url(./assets/bgMobile.jpg) no-repeat top
-    center/cover;
+body {
+
+    background: url(./assets/bgMobile.jpg) no-repeat top center/cover;
 }
-body *{
+
+body * {
     font-family: "Inter", serif;
     color: #ffffff;
 }
 
-#container{    
+#container {
     width: 360px;
-    /* height: 712px; */
-    border: 1px solid red;
 
     margin: 56px auto 0px;
-    /* margin: auto; 
-    padding-top: 56px;
-
-    padding: 100px;
-    padding-top: 20px;
-    padding-left: 200px; */
-
 }
-#profile{
+
+#profile {
     text-align: center;
     padding: 24px;
 }
 
-#profile img{
+#profile img {
     width: 112px;
 }
 
-#profile p{
+#profile p {
     font-weight: 500;
     line-height: 24px;
     margin-top: 8px;
 }
 
 /* botoes */
-ul{
+ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+
+
 }
 
-ul li a{
-    border: 1px solid red;
+ul li a {
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,4 +58,17 @@ ul li a{
     padding: 16px 24px;
 
     border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s, transform 0.2s;
+    width: 100%;
+}
+
+ul li a:hover {
+    background-color: rgba(255, 0, 0, 0.297);
+    color: #ffffff;
+    transform: scale(1.05);
 }
