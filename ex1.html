@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #vermelho { background-color: #ff6b6b; }
+        #azul { background-color: #4dabf7; }
+        #verde { background-color: #51cf66; }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button id="vermelho">Vermelho</button>
+        <button id="azul">Azul</button>
+        <button id="verde">Verde</button>
+    </div>
+
+    <script>
+        document.getElementById('vermelho').addEventListener('click', () => {
+            document.body.style.backgroundColor = '#ff6b6b';
+        });
+
+        document.getElementById('azul').addEventListener('click', () => {
+            document.body.style.backgroundColor = '#4dabf7';
+        });
+
+        document.getElementById('verde').addEventListener('click', () => {
+            document.body.style.backgroundColor = '#51cf66';
+        });
+    </script>
+</body>
+</html> 

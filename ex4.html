@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista com Remoção</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4dabf7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #339af0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        li:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Itens</h1>
+        <div class="input-group">
+            <input type="text" id="itemInput" placeholder="Digite um item">
+            <button id="addButton">Adicionar</button>
+        </div>
+        <ul id="itemList">
+            <li>Clique com o botão direito para remover</li>
+            <li>Item de exemplo 1</li>
+            <li>Item de exemplo 2</li>
+        </ul>
+    </div>
+
+    <script>
+        const itemInput = document.getElementById('itemInput');
+        const addButton = document.getElementById('addButton');
+        const itemList = document.getElementById('itemList');
+
+        // Função para adicionar item
+        function addItem() {
+            const text = itemInput.value.trim();
+            if (text) {
+                const li = document.createElement('li');
+                li.textContent = text;
+                itemList.appendChild(li);
+                itemInput.value = '';
+            }
+        }
+
+        // Adicionar item ao clicar no botão
+        addButton.addEventListener('click', addItem);
+
+        // Adicionar item ao pressionar Enter
+        itemInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addItem();
+            }
+        });
+
+        // Remover item ao clicar com botão direito
+        itemList.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            if (e.target.tagName === 'LI') {
+                e.target.remove();
+            }
+        });
+    </script>
+</body>
+</html> 
